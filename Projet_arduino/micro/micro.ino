@@ -26,8 +26,8 @@ void loop() {
   Serial.print("sensorValue ");
   Serial.println(sensorValue);
   if(sensorValue > THRESHOLD_VALUE){
-    turnOnLED();//if the value read from A0 is larger than 400,then light the LED
+    digitalWrite(LED,LOW);//if the value read from A0 is larger than 400,then light the LED
     delay(500);
     }
-    turnOffLED();
+    digitalWrite(LED,HIGH);
 }
