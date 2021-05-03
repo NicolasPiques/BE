@@ -14,8 +14,6 @@ void Ultrason::Set_distance_ref(){
   
   dist =ultrasonic.MeasureInCentimeters();
   distance_ref=dist;
-
-  
 };
 
 
@@ -23,9 +21,11 @@ void Ultrason::Set_distance_ref(){
 
 int Micro::commande_clap(int etat_systeme){
 
-  
+  if (etat_systeme==0){
 
-  Serial.println("acquisition 1ere valeur");
+  Serial.println("Systeme eteint, attente 1er clap");
+
+  }
   
   int sensorvalue = analogRead(A0);
   int intervalle_sup = 70;

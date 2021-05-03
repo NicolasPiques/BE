@@ -9,7 +9,7 @@ using namespace std;
 
 void WIFI::activer_wifi(){
   
-  WiFi.begin("AndroidNico", "DELLyess");
+  WiFi.begin("Téléphone Mi", "cslesang");
 
   Serial.print("Connecting");
   while (WiFi.status() != WL_CONNECTED)

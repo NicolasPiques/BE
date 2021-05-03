@@ -1,17 +1,19 @@
 #include "Actionneurs.h"
+#include <Arduino.h>
 
-  Buzzer buzzer;
+
+  //Buzzer buzzer;
   
 void setup() {
-
+  
 
 }
 
 void loop() {
 
-  buzzer.allumer_actionneur();
+  /*buzzer.allumer_actionneur();
   delay(500);
   buzzer.eteindre_actionneur();
-  delay(500);
+  delay(500);*/
 
 }

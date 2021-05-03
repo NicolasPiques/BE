@@ -15,11 +15,20 @@ class Intrus{
 
   //constructeur
  Intrus(){};
+ ~Intrus(){};
 
   //méthodes
-  virtual void envoyer_mess();
-  virtual void BIP();
-  virtual int getborne();
+  virtual void envoyer_mess(){};
+  virtual void BIP(){};
+  virtual void afficherCaracteristiques(){Serial.print("WOW");};
+
+  int getcompt(){return compteur;};
+  void setcompt(int compt){compteur=compt;}
+  
+
+  protected :
+
+  int compteur;
 
 };
 
@@ -47,11 +56,8 @@ class Voiture : public Intrus{
     buz.eteindre_actionneur();
     };
 
-    virtual int getborne(){return borne_inf_car;};
+   virtual void afficherCaracteristiques(){Serial.print("Intrus de type voiture, compteur : ");Serial.println(compteur);};
 
-protected :
-
-    int borne_inf_car;
 
 };
 
@@ -79,11 +85,8 @@ class Homme : public Intrus{
     buz.eteindre_actionneur();
   };
 
-  virtual int getborne(){return borne_inf_human;};
+  virtual void afficherCaracteristiques(){Serial.print("Intrus de type homme, compteur : ");Serial.println(compteur);};
 
-protected :
-
-  int borne_inf_human;
   
 };
 
@@ -115,9 +118,6 @@ class Autre : public Intrus{
     buz.eteindre_actionneur();
   };
 
-  virtual int getborne(){return borne_inf_other;};
+  virtual void afficherCaracteristiques(){Serial.print("Intrus de type inconnu, compteur : ");Serial.println(compteur);};
 
-  protected :
-
-  int borne_inf_other;
 };
